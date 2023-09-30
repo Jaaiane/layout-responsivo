@@ -1,0 +1,110 @@
+* {
+    margin: 0px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+
+  
+  body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 70px;
+    background-color: #3e7f8b00;
+    gap: 10px;
+  }
+  
+  header,
+  main,
+  footer {
+    border: 5px solid rgb(0, 0, 0);
+    color: rgb(62, 34, 107);
+    padding: 10px;
+  }
+  
+  nav {
+    width: 70%;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  main {
+    display: grid;
+    grid-template-columns: 1fr 30%;
+    grid-template-rows: 40px 1fr 100px;
+    grid-template-areas:
+      "h1 aside"
+      "section01 aside"
+      "section02 aside"
+    ;
+    gap: 10px;
+  }
+  
+  aside {
+    grid-area: aside;
+  }
+  
+  main>h1 {
+    grid-area: h1;
+  }
+  
+  #section-01 {
+    grid-area: section01;
+  }
+  
+  #section-02 {
+    grid-area: section02;
+  }
+  
+  nav,
+  section,
+  aside {
+    border: 3px solid rgb(156, 107, 202);
+    color: rgb(156, 107, 202);
+    padding:5px;
+  }
+  
+  section>article {
+    border: 3px solid rgb(233, 36, 95);
+    color: rgb(233, 36, 95);
+    height: 43px;
+    margin-top: 3px;
+    padding: 5px;
+  }
+  
+  aside section {
+    border: 3px solid rgb(233, 36, 95);
+    color: rgb(233, 36, 95);
+    height: 70px;
+    margin-top: 13px;
+    padding: 10px;
+  }
+  
+  @media (max-width: 680px) {
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 40px 1fr 100px auto;
+      grid-template-areas:
+        "h1"
+        "section01"
+        "section02"
+        "aside"
+      ;
+      gap: 10px;
+    }
+  
+    aside {
+      display: flex;
+      flex-direction: column;
+      overflow: scroll;
+      overflow-y: hidden;
+    }
+  
+    aside>div {
+      display: flex;
+    }
+  }
